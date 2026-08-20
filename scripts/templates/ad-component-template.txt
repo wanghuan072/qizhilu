@@ -33,10 +33,7 @@ export default function {{COMPONENT_NAME}}() {
                     if (!window.adsbygoogle) {
                         // 从广告代码中提取 client ID
                         const clientMatch = adCode.match(/data-ad-client="([^"]+)"/);
-                        const clientId = clientMatch?.[1];
-                        if (!clientId) {
-                            throw new Error('AdSense 广告代码缺少 data-ad-client');
-                        }
+                        const clientId = clientMatch ? clientMatch[1] : 'ca-pub-4588747915346334';
 
                         const script = document.createElement('script');
                         script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${clientId}`;
