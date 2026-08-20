@@ -40,6 +40,11 @@ const SCRIPT_CONFIG = {
   REQUEST_TIMEOUT: 30000
 };
 
+const API_FETCH_OPTIONS = {
+  retries: 3,
+  retryDelay: 2000,
+} as const;
+
 // 内部类型定义（仅用于脚本生成）
 interface CustomPageLocale {
   id: string;
@@ -521,12 +526,12 @@ async function fetchAndSaveAllData() {
     // 并行获取基础数据
     console.log('获取基础数据...');
     const [siteSettings, articleList, games, gameTags, localeSiteSettings, customPages] = await Promise.all([
-      fetchFromApi<SiteSettings>("/site-settings", { projectId, skipCache: true }),
-      fetchFromApi<ArticlePost[]>("/articles", { projectId, skipCache: true }),
-      fetchFromApi<GameDataList>("/games", { projectId, skipCache: true }),
-      fetchFromApi<{ locale: string; tags: GameTag[] }[]>("/game-tags", { projectId, skipCache: true }),
-      fetchFromApi<ProjectLocaleSiteSetting[]>("/locale-site-settings", { projectId, skipCache: true }),
-      fetchFromApi<CustomPage[]>("/custom-pages", { projectId, skipCache: true }).then((pages) => {
+      fetchFromApi<SiteSettings>("/site-settings", { projectId, skipCache: true }, API_FETCH_OPTIONS),
+      fetchFromApi<ArticlePost[]>("/articles", { projectId, skipCache: true }, API_FETCH_OPTIONS),
+      fetchFromApi<GameDataList>("/games", { projectId, skipCache: true }, API_FETCH_OPTIONS),
+      fetchFromApi<{ locale: string; tags: GameTag[] }[]>("/game-tags", { projectId, skipCache: true }, API_FETCH_OPTIONS),
+      fetchFromApi<ProjectLocaleSiteSetting[]>("/locale-site-settings", { projectId, skipCache: true }, API_FETCH_OPTIONS),
+      fetchFromApi<CustomPage[]>("/custom-pages", { projectId, skipCache: true }, API_FETCH_OPTIONS).then((pages) => {
         // 将flat的页面列表按sourcePageId聚合
         return aggregateCustomPages(pages);
       }).catch(() => {
