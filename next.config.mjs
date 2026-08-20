@@ -33,7 +33,9 @@ const nextConfig = {
 	allowedDevOrigins: [
 		"localhost:3000",
 		"qizhilu.vocalremoveroak.com",
-		process.env.NEXT_PUBLIC_DEV_ORIGIN,
+		...(process.env.NEXT_PUBLIC_DEV_ORIGIN
+			? [process.env.NEXT_PUBLIC_DEV_ORIGIN]
+			: []),
 	],
 	// 设置输出文件跟踪根目录，解决多锁文件警告
 	outputFileTracingRoot: process.cwd(),
