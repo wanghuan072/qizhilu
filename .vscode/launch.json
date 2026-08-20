@@ -1,0 +1,38 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "开发模式",
+			"runtimeExecutable": "bun",
+			"runtimeArgs": ["run", "dev"],
+			"skipFiles": ["<node_internals>/**"],
+			"console": "integratedTerminal"
+		},
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "构建项目",
+			"runtimeExecutable": "bun",
+			"runtimeArgs": ["run", "build"],
+			"skipFiles": ["<node_internals>/**"],
+			"console": "integratedTerminal"
+		},
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "启动生产服务器",
+			"runtimeExecutable": "bun",
+			"runtimeArgs": ["run", "start"],
+			"skipFiles": ["<node_internals>/**"],
+			"console": "integratedTerminal"
+		}
+	],
+	"compounds": [
+		{
+			"name": "开发模式",
+			"configurations": ["开发模式"]
+		}
+	]
+}

@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	/* 色阶变量 - RGB 格式，供 rgb(var(--color-xxx-xxx)) 使用 */
+	--color-primary-50: 240 253 254;
+	--color-primary-100: 207 250 254;
+	--color-primary-200: 165 243 252;
+	--color-primary-300: 103 232 249;
+	--color-primary-400: 34 211 238;
+	--color-primary-500: 6 182 212;
+	--color-primary-600: 8 145 178;
+	--color-primary-700: 14 116 144;
+	--color-primary-800: 21 94 117;
+	--color-primary-900: 22 78 99;
+	--color-primary-950: 8 51 68;
+
+	--color-secondary-50: 250 245 255;
+	--color-secondary-100: 243 232 255;
+	--color-secondary-200: 233 213 255;
+	--color-secondary-300: 216 180 254;
+	--color-secondary-400: 196 181 253;
+	--color-secondary-500: 168 85 247;
+	--color-secondary-600: 147 51 234;
+	--color-secondary-700: 126 34 206;
+	--color-secondary-800: 107 33 168;
+	--color-secondary-900: 88 28 135;
+	--color-secondary-950: 59 7 100;
+}
+
+@layer base {
+	* {
+		@apply border-border outline-ring/50;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
+}
+
+:root {
+	--sidebar: hsl(0 0% 98%);
+	--sidebar-foreground: hsl(240 5.3% 26.1%);
+	--sidebar-primary: hsl(240 5.9% 10%);
+	--sidebar-primary-foreground: hsl(0 0% 98%);
+	--sidebar-accent: hsl(240 4.8% 95.9%);
+	--sidebar-accent-foreground: hsl(240 5.9% 10%);
+	--sidebar-border: hsl(220 13% 91%);
+	--sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+.dark {
+	--sidebar: hsl(240 5.9% 10%);
+	--sidebar-foreground: hsl(240 4.8% 95.9%);
+	--sidebar-primary: hsl(224.3 76.3% 48%);
+	--sidebar-primary-foreground: hsl(0 0% 100%);
+	--sidebar-accent: hsl(240 3.7% 15.9%);
+	--sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+	--sidebar-border: hsl(240 3.7% 15.9%);
+	--sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+/* 游戏网站特定样式 */
+/* 粘性头部样式 */
+.sticky-header {
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px
+		rgba(0, 0, 0, 0.06);
+	transition: all 0.3s ease;
+}
+
+/* 移动菜单样式 */
+.mobile-dropdown-content {
+	transition: all 0.3s ease;
+}
+
+/* 标签页样式 */
+.tab-pane {
+	transition: opacity 0.3s ease;
+}
+
+/* 游戏卡片悬停效果 */
+.game-card {
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	touch-action: manipulation; /* 防止iPhone双击放大 */
+}
+
+.game-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px
+		rgba(0, 0, 0, 0.05);
+}
+
+/* 全屏模式样式 */
+:fullscreen {
+	background-color: #000;
+}
+
+/* 响应式iframe容器 */
+.aspect-w-16 {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	max-height: calc(100vh - 220px);
+}
+
+.aspect-w-16 iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+@media (min-width: 768px) {
+	.aspect-w-16.md\:aspect-h-7 {
+		padding-bottom: 43.75%; /* 16:7 */
+	}
+}
+
+/* 全屏模式样式 */
+.fullscreen-mode {
+	background-color: #000;
+	z-index: 9999;
+}
+
+/* 下拉菜单动画 */
+.group:hover .group-hover\:opacity-100 {
+	transition-delay: 0.1s;
+}
+
+.group:hover .group-hover\:visible {
+	transition-delay: 0.1s;
+}
+
+.group\/sub:hover .group-hover\/sub\:opacity-100 {
+	transition-delay: 0.1s;
+}
+
+.group\/sub:hover .group-hover\/sub\:visible {
+	transition-delay: 0.1s;
+}
+
+/* 移动菜单图标旋转动画 */
+.mobile-dropdown-icon {
+	transition: transform 0.3s ease;
+}
+
+/* 隐藏滚动条样式 */
+.scrollbar-hide {
+	-ms-overflow-style: none; /* Internet Explorer 10+ */
+	scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+	display: none; /* Safari and Chrome */
+	width: 0;
+	height: 0;
+}
+
+.scrollbar-hide::-webkit-scrollbar-track {
+	display: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar-thumb {
+	display: none;
+}

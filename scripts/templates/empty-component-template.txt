@@ -1,0 +1,13 @@
+/**
+ * {{DESCRIPTION}}
+ * 空广告组件（无广告配置）
+ * 自动生成，请勿手动修改
+ * 生成时间: {{GENERATED_AT}}
+ */
+
+export default function {{COMPONENT_NAME}}() {
+    // 返回空的 div，不影响页面布局
+    return (
+        <div className="{{CSS_CLASSES}}"></div>
+    );
+}

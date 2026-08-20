@@ -1,0 +1,48 @@
+{
+	"compilerOptions": {
+		"esModuleInterop": true,
+		"incremental": false,
+		"isolatedModules": true,
+		"lib": ["ESNext", "DOM", "DOM.Iterable"],
+		"module": "ESNext",
+		"moduleDetection": "force",
+		"moduleResolution": "bundler",
+		"noEmit": true,
+		"allowImportingTsExtensions": true,
+		"noUncheckedIndexedAccess": true,
+		"resolveJsonModule": true,
+		"target": "ESNext",
+		"jsx": "preserve",
+		"allowJs": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"skipLibCheck": true,
+		"plugins": [
+			{
+				"name": "next"
+			}
+		],
+		"paths": {
+			"@/*": ["./*"],
+			"@lib/*": ["./lib/*"],
+			"@components/*": ["./lib/components/*"],
+			"@ui/*": ["./lib/components/ui/*"],
+			"@types/*": ["./lib/types/*"],
+			"@hooks/*": ["./lib/hooks/*"],
+			"@i18n/*": ["./lib/i18n/*"],
+			"@services/*": ["./lib/services/*"],
+			"@utils/*": ["./lib/utils/*"],
+			"@auth/*": ["./lib/auth/*"],
+			"@consts/*": ["./lib/consts/*"],
+			"@config/*": ["./lib/config/*"]
+		}
+	},
+	"include": [
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		".next/types/**/*.ts",
+		"lib/utils/llms.server.ts"
+	],
+	"exclude": ["node_modules"]
+}

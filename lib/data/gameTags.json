@@ -1,0 +1,320 @@
+[
+  {
+    "locale": "en",
+    "tags": [
+      {
+        "id": "cmcsy73ib095zgrh405kpbrj9",
+        "name": "Strategy",
+        "locale": "en",
+        "slug": "strategy",
+        "description": "Games that emphasize tactical decision-making and planning to achieve objectives.",
+        "imageUrl": "",
+        "iconName": "",
+        "count": 2,
+        "metaTitle": "Strategy Games | Plan, Conquer & Dominate",
+        "metaDescription": "Dive into strategy games where your decisions shape the outcome. Plan your moves, manage resources, and outsmart opponents in diverse strategic challenges."
+      },
+      {
+        "id": "cmcu5in6r0tbbgrh4edpin8fi",
+        "name": "Tower Defense",
+        "locale": "en",
+        "slug": "tower-defense",
+        "description": "Games where players build and upgrade defensive structures to protect a base or path from waves of enemies.",
+        "imageUrl": "",
+        "iconName": "",
+        "count": 2,
+        "metaTitle": "Tower Defense Games",
+        "metaDescription": "Defend your territory against hordes of enemies in our engaging tower defense games. Strategize, build mazes, and upgrade your defenses to survive."
+      },
+      {
+        "id": "cmdgzwv5z0u3pgr18w52pgmih",
+        "name": "Resource Management",
+        "locale": "en",
+        "slug": "resource-management",
+        "description": "Games that involve collecting and managing various types of in-game currency or resources to progress.",
+        "imageUrl": "",
+        "iconName": "",
+        "count": 1,
+        "metaTitle": "Resource Management Games",
+        "metaDescription": "Dive into games focused on resource management and collection. Gather, craft, and optimize your resources to build, upgrade, and expand your in-game world."
+      },
+      {
+        "id": "cmffmxb611vqfgro1axk8nh8w",
+        "name": "Post-Apocalyptic",
+        "locale": "en",
+        "slug": "post-apocalyptic",
+        "description": "Games set in a world after a catastrophic event has occurred, often featuring survival elements and desolate landscapes.",
+        "imageUrl": "",
+        "iconName": "",
+        "count": 1,
+        "metaTitle": "Post-Apocalyptic Games",
+        "metaDescription": "Explore desolate worlds and survive in these post-apocalyptic games."
+      }
+    ]
+  },
+  {
+    "locale": "de",
+    "tags": [
+      {
+        "id": "cmcsy73ib095zgrh405kpbrj9",
+        "name": "Strategie",
+        "locale": "de",
+        "slug": "strategy",
+        "description": "Spiele, die taktische Entscheidungsfindung und Planung betonen, um Ziele zu erreichen.",
+        "imageUrl": "",
+        "iconName": "",
+        "count": 2,
+        "metaTitle": "Strategiespiele | Planen, Erobern & Dominieren",
+        "metaDescription": "Tauche ein in Strategiespiele, in denen deine Entscheidungen den Ausgang bestimmen. Plane deine Züge, verwalte Ressourcen und überliste Gegner in vielfältigen strategischen Herausforderungen."
+      },
+      {
+        "id": "cmcu5in6r0tbbgrh4edpin8fi",
+        "name": "Tower Defense",
+        "locale": "de",
+        "slug": "tower-defense",
+        "description": "Spiele, bei denen Spieler Verteidigungsstrukturen bauen und verbessern, um eine Basis oder einen Pfad vor Wellen von Feinden zu schützen.",
+        "imageUrl": "",
+        "iconName": "",
+        "count": 2,
+        "metaTitle": "Tower Defense Spiele",
+        "metaDescription": "Verteidige dein Gebiet in unseren fesselnden Tower-Defense-Spielen gegen Horden von Feinden. Entwickle Strategien, baue Labyrinthe und verbessere deine Verteidigung, um zu überleben."
+      },
+      {
+        "id": "cmdgzwv5z0u3pgr18w52pgmih",
+        "name": "Ressourcenmanagement",
+        "locale": "de",
+        "slug": "resource-management",
+        "description": "Spiele, bei denen es darum geht, verschiedene Arten von Spielwährung oder Ressourcen zu sammeln und zu verwalten, um Fortschritte zu erzielen.",
+        "imageUrl": "",
+        "iconName": "",
+        "count": 1,
+        "metaTitle": "Ressourcenmanagement-Spiele",
+        "metaDescription": "Tauche ein in Spiele, die sich auf Ressourcenverwaltung und -sammlung konzentrieren. Sammle, fertige und optimiere deine Ressourcen, um deine Spielwelt zu bauen, zu verbessern und zu erweitern."
+      },
+      {
+        "id": "cmffmxb611vqfgro1axk8nh8w",
+        "name": "Post-Apocalyptic",
+        "locale": "de",
+        "slug": "post-apocalyptic",
+        "description": "",
+        "imageUrl": "",
+        "iconName": "",
+        "count": 1,
+        "metaTitle": "",
+        "metaDescription": ""
+      }
+    ]
+  },
+  {
+    "locale": "fr",
+    "tags": [
+      {
+        "id": "cmcsy73ib095zgrh405kpbrj9",
+        "name": "Stratégie",
+        "locale": "fr",
+        "slug": "strategy",
+        "description": "Jeux qui mettent l'accent sur la prise de décision tactique et la planification pour atteindre des objectifs.",
+        "imageUrl": "",
+        "iconName": "",
+        "count": 2,
+        "metaTitle": "Jeux de stratégie | Planifiez, conquérir et dominer",
+        "metaDescription": "Plongez dans des jeux de stratégie où vos décisions façonnent l'issue. Planifiez vos mouvements, gérez vos ressources et déjouez vos adversaires dans divers défis stratégiques."
+      },
+      {
+        "id": "cmcu5in6r0tbbgrh4edpin8fi",
+        "name": "Tower Defense",
+        "locale": "fr",
+        "slug": "tower-defense",
+        "description": "Jeux où les joueurs construisent et améliorent des structures défensives pour protéger une base ou un chemin contre des vagues d'ennemis.",
+        "imageUrl": "",
+        "iconName": "",
+        "count": 2,
+        "metaTitle": "Jeux de Tower Defense",
+        "metaDescription": "Défendez votre territoire contre des hordes d'ennemis dans nos jeux de tower defense captivants. Élaborez des stratégies, construisez des labyrinthes et améliorez vos défenses pour survivre."
+      },
+      {
+        "id": "cmdgzwv5z0u3pgr18w52pgmih",
+        "name": "Gestion de ressources",
+        "locale": "fr",
+        "slug": "resource-management",
+        "description": "Jeux qui impliquent de collecter et de gérer différents types de monnaie ou de ressources en jeu pour progresser.",
+        "imageUrl": "",
+        "iconName": "",
+        "count": 1,
+        "metaTitle": "Jeux de gestion de ressources",
+        "metaDescription": "Plongez dans des jeux axés sur la gestion et la collecte de ressources. Récoltez, fabriquez et optimisez vos ressources pour construire, améliorer et développer votre monde en jeu."
+      },
+      {
+        "id": "cmffmxb611vqfgro1axk8nh8w",
+        "name": "Post-Apocalyptic",
+        "locale": "fr",
+        "slug": "post-apocalyptic",
+        "description": "",
+        "imageUrl": "",
+        "iconName": "",
+        "count": 1,
+        "metaTitle": "",
+        "metaDescription": ""
+      }
+    ]
+  },
+  {
+    "locale": "ja",
+    "tags": [
+      {
+        "id": "cmcsy73ib095zgrh405kpbrj9",
+        "name": "戦略",
+        "locale": "ja",
+        "slug": "strategy",
+        "description": "目標達成のために、戦術的な意思決定と計画を重視するゲーム。",
+        "imageUrl": "",
+        "iconName": "",
+        "count": 2,
+        "metaTitle": "戦略ゲーム | 計画、征服、そして支配",
+        "metaDescription": "あなたの決断が結果を左右する戦略ゲームの世界へ飛び込もう。多様な戦略的挑戦の中で、あなたの動きを計画し、資源を管理し、対戦相手を出し抜け。"
+      },
+      {
+        "id": "cmcu5in6r0tbbgrh4edpin8fi",
+        "name": "タワーディフェンス",
+        "locale": "ja",
+        "slug": "tower-defense",
+        "description": "プレイヤーが防衛構造物を建設し、アップグレードして、敵の波から基地や道を保護するゲーム。",
+        "imageUrl": "",
+        "iconName": "",
+        "count": 2,
+        "metaTitle": "タワーディフェンスゲーム",
+        "metaDescription": "魅力的なタワーディフェンスゲームで、敵の大群からあなたの領土を守りましょう。戦略を立て、迷路を作り、防御をアップグレードして生き残りましょう。"
+      },
+      {
+        "id": "cmdgzwv5z0u3pgr18w52pgmih",
+        "name": "リソース管理",
+        "locale": "ja",
+        "slug": "resource-management",
+        "description": "ゲーム内で、進行するためにさまざまな種類のゲーム内通貨やリソースを収集し、管理することを含むゲーム。",
+        "imageUrl": "",
+        "iconName": "",
+        "count": 1,
+        "metaTitle": "リソース管理ゲーム",
+        "metaDescription": "リソース管理と収集に焦点を当てたゲームに飛び込みましょう。ゲーム内の世界を構築、アップグレード、拡張するために、リソースを収集、作成、最適化します。"
+      },
+      {
+        "id": "cmffmxb611vqfgro1axk8nh8w",
+        "name": "Post-Apocalyptic",
+        "locale": "ja",
+        "slug": "post-apocalyptic",
+        "description": "",
+        "imageUrl": "",
+        "iconName": "",
+        "count": 1,
+        "metaTitle": "",
+        "metaDescription": ""
+      }
+    ]
+  },
+  {
+    "locale": "es-ES",
+    "tags": [
+      {
+        "id": "cmcsy73ib095zgrh405kpbrj9",
+        "name": "Estrategia",
+        "locale": "es-ES",
+        "slug": "strategy",
+        "description": "Juegos que enfatizan la toma de decisiones tácticas y la planificación para lograr objetivos.",
+        "imageUrl": "",
+        "iconName": "",
+        "count": 2,
+        "metaTitle": "Juegos de Estrategia | Planifica, Conquista y Domina",
+        "metaDescription": "Sumérgete en juegos de estrategia donde tus decisiones dan forma al resultado. Planifica tus movimientos, gestiona recursos y supera a tus oponentes en diversos desafíos estratégicos."
+      },
+      {
+        "id": "cmcu5in6r0tbbgrh4edpin8fi",
+        "name": "Defensa de Torres",
+        "locale": "es-ES",
+        "slug": "tower-defense",
+        "description": "Juegos donde los jugadores construyen y mejoran estructuras defensivas para proteger una base o camino de las oleadas de enemigos.",
+        "imageUrl": "",
+        "iconName": "",
+        "count": 2,
+        "metaTitle": "Juegos de Defensa de Torres",
+        "metaDescription": "Defiende tu territorio contra hordas de enemigos en nuestros atractivos juegos de defensa de torres. Planifica estrategias, construye laberintos y mejora tus defensas para sobrevivir."
+      },
+      {
+        "id": "cmdgzwv5z0u3pgr18w52pgmih",
+        "name": "Resource Management",
+        "locale": "es-ES",
+        "slug": "resource-management",
+        "description": "",
+        "imageUrl": "",
+        "iconName": "",
+        "count": 1,
+        "metaTitle": "",
+        "metaDescription": ""
+      },
+      {
+        "id": "cmffmxb611vqfgro1axk8nh8w",
+        "name": "Post-apocalíptico",
+        "locale": "es-ES",
+        "slug": "post-apocalyptic",
+        "description": "Juegos ambientados en un mundo tras un evento catastrófico, a menudo con elementos de supervivencia y paisajes desolados.",
+        "imageUrl": "",
+        "iconName": "",
+        "count": 1,
+        "metaTitle": "Juegos Post-apocalípticos",
+        "metaDescription": "Explora mundos desolados y sobrevive en estos juegos post-apocalípticos."
+      }
+    ]
+  },
+  {
+    "locale": "ko",
+    "tags": [
+      {
+        "id": "cmcsy73ib095zgrh405kpbrj9",
+        "name": "전략",
+        "locale": "ko",
+        "slug": "strategy",
+        "description": "목표 달성을 위해 전술적 의사 결정과 계획을 강조하는 게임.",
+        "imageUrl": "",
+        "iconName": "",
+        "count": 2,
+        "metaTitle": "전략 게임 | 계획, 정복 & 지배",
+        "metaDescription": "결정이 결과를 좌우하는 전략 게임에 빠져보세요. 다양한 전략적 도전에서 움직임을 계획하고, 자원을 관리하며, 상대를 제압하세요."
+      },
+      {
+        "id": "cmcu5in6r0tbbgrh4edpin8fi",
+        "name": "타워 디펜스",
+        "locale": "ko",
+        "slug": "tower-defense",
+        "description": "플레이어가 기지를 보호하거나 적의 파도로부터 경로를 보호하기 위해 방어 구조물을 건설하고 업그레이드하는 게임.",
+        "imageUrl": "",
+        "iconName": "",
+        "count": 2,
+        "metaTitle": "타워 디펜스 게임",
+        "metaDescription": "저희의 매력적인 타워 디펜스 게임에서 적의 무리로부터 당신의 영토를 방어하세요. 생존하기 위해 전략을 세우고, 미로를 건설하고, 방어 시설을 업그레이드하세요."
+      },
+      {
+        "id": "cmdgzwv5z0u3pgr18w52pgmih",
+        "name": "자원 관리",
+        "locale": "ko",
+        "slug": "resource-management",
+        "description": "다양한 게임 내 화폐 또는 자원을 수집하고 관리하여 진행하는 게임.",
+        "imageUrl": "",
+        "iconName": "",
+        "count": 1,
+        "metaTitle": "자원 관리 게임",
+        "metaDescription": "자원 관리 및 수집에 초점을 맞춘 게임에 빠져보세요. 자원을 모으고, 제작하고, 최적화하여 게임 내 세계를 건설하고, 업그레이드하고, 확장하세요."
+      },
+      {
+        "id": "cmffmxb611vqfgro1axk8nh8w",
+        "name": "Post-Apocalyptic",
+        "locale": "ko",
+        "slug": "post-apocalyptic",
+        "description": "",
+        "imageUrl": "",
+        "iconName": "",
+        "count": 1,
+        "metaTitle": "",
+        "metaDescription": ""
+      }
+    ]
+  }
+]

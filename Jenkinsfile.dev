@@ -1,0 +1,301 @@
+pipeline {
+    agent any
+
+    // 定义环境变量
+    environment {
+        // 项目ID，从参数中获取
+        PROJECT_ID = "${params.project_id}"
+        // 部署记录ID，从参数中获取
+        DEPLOYMENT_ID = "${params.deployment_id}"
+        // API接口地址
+        WEB_API_URL = "${params.web_api_url}"
+        // 默认语言
+        DEFAULT_LOCALE = "${params.default_locale}"
+        
+        // 回调URL和令牌，用于更新部署状态
+        CALLBACK_URL = "${params.callback_url}"
+        CALLBACK_TOKEN = "${params.callback_token}"
+
+        // 构建信息
+        BUILD_DIR = "."
+
+        // 动态端口分配 (使用构建号来确保唯一性)
+        DEV_PORT = "${4001 + (BUILD_NUMBER.toInteger() % 999)}"  // 限制在4001-4999范围内
+
+        // 日志文件路径
+        LOG_FILE = "dev-server-${BUILD_NUMBER}.log"
+
+        // 服务器进程ID文件
+        PID_FILE = "dev-server-${BUILD_NUMBER}.pid"
+
+        // 公网访问URL
+        PUBLIC_URL = "http://43.138.191.59:${DEV_PORT}"
+
+        DEV_ORIGIN = "43.138.191.59:${DEV_PORT}"
+
+        // 超时时间（15分钟，单位：秒）
+        TIMEOUT_SECONDS = "900"
+    }
+
+    parameters {
+        string(name: 'project_id', defaultValue: 'project123', description: '项目ID，用于查询数据')
+        string(name: 'deployment_id', defaultValue: '', description: '部署ID，用于更新部署状态')
+        string(name: 'web_api_url', defaultValue: 'http://localhost:8000', description: 'API接口地址')
+        string(name: 'callback_url', defaultValue: '', description: '回调URL')
+        string(name: 'callback_token', defaultValue: '', description: '回调令牌')
+        string(name: 'default_locale', defaultValue: 'en', description: '默认语言')
+
+    }
+
+    stages {
+        // 初始化阶段
+        stage('Initialize') {
+            steps {
+                echo "Starting development environment for Project ID: ${PROJECT_ID}"
+                echo "Allocated port: ${DEV_PORT}"
+
+                // 清理工作区
+                cleanWs()
+
+                // 检出代码
+                checkout scm
+                
+                // 发送构建开始的回调
+                script {
+                    def startPayload = """
+                    {
+                        "deploymentId": "${DEPLOYMENT_ID}",
+                        "status": "STARTED",
+                        "buildNumber": ${BUILD_NUMBER},
+                        "buildUrl": "${PUBLIC_URL}",
+                        "message": "Jenkins预览环境构建已开始"
+                    }
+                    """
+
+                    if (CALLBACK_URL && DEPLOYMENT_ID) {
+                        sh """
+                        curl -X POST "${CALLBACK_URL}" \\
+                            -H "Content-Type: application/json" \\
+                            -H "Authorization: Bearer ${CALLBACK_TOKEN}" \\
+                            -d '${startPayload}'
+                        """
+                    } else {
+                        echo "No callback URL or deployment ID provided, skipping callback"
+                    }
+                }
+            }
+        }
+
+        // 检查Bun阶段
+        stage('Check Bun') {
+            steps {
+                echo "Checking if Bun is installed for jenkins user..."
+                sh '''
+                # 检查jenkins用户目录下的bun是否可用
+                echo "HOME: $HOME"
+                if [ -f "$HOME/.bun/bin/bun" ]; then
+                    echo "Bun is available for jenkins user:"
+                    $HOME/.bun/bin/bun --version
+                else
+                    echo "Bun not found in jenkins user directory."
+                    echo "Please run the following commands on the host machine:"
+                    echo "sudo su - jenkins"
+                    echo "curl -fsSL https://bun.sh/install | bash"
+                    echo "exit"
+                    exit 1
+                fi
+                '''
+            }
+        }
+
+        // 安装依赖阶段
+        stage('Install Dependencies') {
+            steps {
+                echo "Installing dependencies with Bun..."
+                sh '''
+                # 使用jenkins用户目录下的bun
+                $HOME/.bun/bin/bun install
+                '''
+            }
+        }
+
+        // 创建环境变量文件
+        stage('Create Environment') {
+            steps {
+                echo "Creating environment configuration..."
+                sh """
+                # 创建或更新.env.local文件
+                cat > .env.local << EOL
+# API配置
+NEXT_PUBLIC_WEB_API_URL=${WEB_API_URL}
+NEXT_PUBLIC_DEFAULT_LOCALE=${DEFAULT_LOCALE}
+# 当前网站的域名，用于生成一些url路径使用
+NEXT_PUBLIC_DOMAIN="${PUBLIC_URL}"
+NEXT_PUBLIC_DEV_ORIGIN="${DEV_ORIGIN}"
+# 项目ID
+NEXT_PUBLIC_PROJECT_ID="${PROJECT_ID}"
+EOL
+
+                cat .env.local
+                """
+            }
+        }
+
+        // 启动开发服务器
+        stage('Start Development Server') {
+            steps {
+                echo "Starting development server on port ${DEV_PORT}..."
+                sh """
+                # 启动开发服务器并将输出重定向到日志文件
+                nohup $HOME/.bun/bin/bun run dev --port ${DEV_PORT} > ${LOG_FILE} 2>&1 &
+
+                # 保存进程ID
+                echo \$! > ${PID_FILE}
+
+                # 等待服务器启动
+                echo "Waiting for server to start..."
+                sleep 10
+
+                # 检查服务器是否正在运行
+                if ps -p \$(cat ${PID_FILE}) > /dev/null; then
+                    echo "Server started successfully with PID \$(cat ${PID_FILE})"
+                else
+                    echo "Server failed to start"
+                    exit 1
+                fi
+
+                # 显示最近的日志
+                echo "Recent logs:"
+                tail -n 20 ${LOG_FILE}
+                """
+            }
+        }
+
+        // 显示环境信息
+        stage('Environment Info') {
+            steps {
+                echo "Development environment is ready!"
+                echo "--------------------------------------"
+                echo "Project ID: ${PROJECT_ID}"
+                echo "Public URL: ${PUBLIC_URL}"
+                echo "Port: ${DEV_PORT}"
+                echo "Log file: ${LOG_FILE}"
+                echo "--------------------------------------"
+                echo "Environment will automatically shut down after 15 minutes"
+                echo "To view logs, use: tail -f ${LOG_FILE}"
+                
+                // 发送环境就绪的回调
+                script {
+                    def readyPayload = """
+                    {
+                        "deploymentId": "${DEPLOYMENT_ID}",
+                        "status": "SUCCESS",
+                        "buildNumber": ${BUILD_NUMBER},
+                        "buildUrl": "${PUBLIC_URL}",
+                        "message": "Jenkins预览环境已就绪"
+                    }
+                    """
+
+                    if (CALLBACK_URL && DEPLOYMENT_ID) {
+                        sh """
+                        curl -X POST "${CALLBACK_URL}" \\
+                            -H "Content-Type: application/json" \\
+                            -H "Authorization: Bearer ${CALLBACK_TOKEN}" \\
+                            -d '${readyPayload}'
+                        """
+                    }
+                }
+            }
+        }
+
+        // 新增保持 Jenkins 任务存活的阶段，防止服务被提前杀死
+
+        stage('Show Live Logs') {
+            steps {
+                echo "Streaming logs for 15 minutes..."
+                sh "timeout 900 tail -f ${LOG_FILE}"
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "Development environment setup successful!"
+        }
+
+        failure {
+            echo "Development environment setup failed!"
+
+            // 清理进程
+            sh """
+            if [ -f "${PID_FILE}" ]; then
+                PID=\$(cat ${PID_FILE})
+                if ps -p \$PID > /dev/null; then
+                    echo "Killing server process \$PID"
+                    kill \$PID
+                fi
+            fi
+            """
+            
+            // 发送失败回调
+            script {
+                def failurePayload = """
+                {
+                    "deploymentId": "${DEPLOYMENT_ID}",
+                    "status": "FAILURE",
+                    "buildNumber": ${BUILD_NUMBER},
+                    "message": "Jenkins预览环境构建失败"
+                }
+                """
+
+                if (CALLBACK_URL && DEPLOYMENT_ID) {
+                    sh """
+                    curl -X POST "${CALLBACK_URL}" \\
+                        -H "Content-Type: application/json" \\
+                        -H "Authorization: Bearer ${CALLBACK_TOKEN}" \\
+                        -d '${failurePayload}'
+                    """
+                }
+            }
+        }
+
+        aborted {
+            echo "Build was aborted!"
+
+            // 清理进程
+            sh """
+            if [ -f "${PID_FILE}" ]; then
+                PID=\$(cat ${PID_FILE})
+                if ps -p \$PID > /dev/null; then
+                    echo "Killing server process \$PID"
+                    kill \$PID
+                fi
+            fi
+            """
+            
+            // 发送中止回调
+            script {
+                def abortedPayload = """
+                {
+                    "deploymentId": "${DEPLOYMENT_ID}",
+                    "status": "ABORTED",
+                    "buildNumber": ${BUILD_NUMBER},
+                    "message": "Jenkins预览环境构建被中止"
+                }
+                """
+
+                if (CALLBACK_URL && DEPLOYMENT_ID) {
+                    sh """
+                    curl -X POST "${CALLBACK_URL}" \\
+                        -H "Content-Type: application/json" \\
+                        -H "Authorization: Bearer ${CALLBACK_TOKEN}" \\
+                        -d '${abortedPayload}'
+                    """
+                }
+            }
+        }
+
+        // 不要在完成后清理工作区，因为我们需要保持服务器运行
+        // 服务器将通过自动关闭脚本在15分钟后终止
+    }
+}

@@ -1,0 +1,753 @@
+[
+  {
+    "type": "ArticleCategories",
+    "locale": "en",
+    "content": [
+      {
+        "code": "default",
+        "icon": "book",
+        "name": "默认分类",
+        "slug": "default",
+        "count": 0,
+        "locale": "en",
+        "children": [],
+        "metadata": {
+          "title": "默认分类",
+          "description": "系统默认文章分类"
+        },
+        "sortOrder": 1
+      }
+    ]
+  },
+  {
+    "type": "GameCategories",
+    "locale": "en",
+    "content": [
+      {
+        "code": "tower_defense_games",
+        "icon": "gamepad2",
+        "name": "Tower Defense Games",
+        "slug": "tower-defense-games",
+        "count": 0,
+        "locale": "en",
+        "metadata": {
+          "title": "Tower Defense Games",
+          "description": "Defend your base from waves of enemies by strategically placing and upgrading defensive towers."
+        },
+        "sortOrder": 0
+      },
+      {
+        "code": "poké_path_games",
+        "icon": "gamepad",
+        "name": "PokéPath Games",
+        "slug": "pokpath-games",
+        "count": 0,
+        "locale": "en",
+        "metadata": {
+          "title": "PokéPath Games Collection: Play Free Pokémon TD Online",
+          "description": "Play all PokéPath games for free! Enjoy the full collection of Pokémon Tower Defense titles, mods, and strategy challenges directly in your browser.\n"
+        },
+        "sortOrder": 2
+      },
+      {
+        "code": "tower-defense-games",
+        "name": "Tower Defense Games",
+        "slug": "tower-defense-games",
+        "count": 0,
+        "locale": "en",
+        "metadata": {
+          "title": "Tower Defense Games - Defend Your Base",
+          "description": "Engage in strategic battles, building and upgrading defensive towers to repel waves of enemies. Protect your base with clever tactics and powerful upgrades in these addictive tower defense games."
+        },
+        "sortOrder": 0
+      }
+    ]
+  },
+  {
+    "type": "Metadata",
+    "locale": "en",
+    "content": {
+      "title": "PokéPath TD: Play Pokémon Tower Defense Games online",
+      "locale": "en",
+      "description": "Experience the best Pokémon Tower Defense game. Explore our collection of PokéPath games, top-rated TD strategy games, and access exclusive guides walkthroughs."
+    }
+  },
+  {
+    "type": "GameCategories",
+    "locale": "ja",
+    "content": [
+      {
+        "code": "tower_defense_games",
+        "icon": "gamepad2",
+        "name": "タワーディフェンスゲーム",
+        "slug": "tower-defense-games",
+        "count": 0,
+        "locale": "ja",
+        "metadata": {
+          "title": "タワーディフェンスゲーム",
+          "description": "戦略的に防衛タワーを配置し、アップグレードして、迫りくる敵のウェーブから拠点を守り抜け！"
+        },
+        "sortOrder": 0
+      },
+      {
+        "code": "poké_path_games",
+        "icon": "gamepad",
+        "name": "PokéPath Games",
+        "slug": "pokpath-games",
+        "count": 0,
+        "locale": "en",
+        "metadata": {
+          "title": "PokéPath Games Collection: Play Free Pokémon TD Online",
+          "description": "Play all PokéPath games for free! Enjoy the full collection of Pokémon Tower Defense titles, mods, and strategy challenges directly in your browser.\n"
+        },
+        "sortOrder": 2
+      },
+      {
+        "code": "tower-defense-games",
+        "name": "タワーディフェンスゲーム",
+        "slug": "tower-defense-games",
+        "count": 0,
+        "locale": "ja",
+        "metadata": {
+          "title": "タワーディフェンスゲーム - 基地を守り抜け！",
+          "description": "戦略バトルで敵のウェーブを撃退！防衛タワーを建設、アップグレードして拠点を守り抜け。 巧妙な戦術と強力なアップグレードで勝利を掴め！中毒性抜群のタワーディフェンスゲーム！"
+        },
+        "sortOrder": 0
+      }
+    ],
+    "error": ""
+  },
+  {
+    "type": "GameCategories",
+    "locale": "fr",
+    "content": [
+      {
+        "code": "tower_defense_games",
+        "icon": "gamepad2",
+        "name": "Jeux de Tower Defense",
+        "slug": "tower-defense-games",
+        "count": 0,
+        "locale": "fr",
+        "metadata": {
+          "title": "Jeux de Tower Defense",
+          "description": "Défendez votre base contre des vagues d'ennemis en plaçant et en améliorant stratégiquement des tours de défense."
+        },
+        "sortOrder": 0
+      },
+      {
+        "code": "poké_path_games",
+        "icon": "gamepad",
+        "name": "Jeux d'action",
+        "slug": "pokpath-games",
+        "count": 0,
+        "locale": "en",
+        "metadata": {
+          "title": "PokéPath Games Collection: Play Free Pokémon TD Online",
+          "description": "Play all PokéPath games for free! Enjoy the full collection of Pokémon Tower Defense titles, mods, and strategy challenges directly in your browser.\n"
+        },
+        "sortOrder": 2
+      },
+      {
+        "code": "tower-defense-games",
+        "name": "Jeux de Tower Defense",
+        "slug": "tower-defense-games",
+        "count": 0,
+        "locale": "fr",
+        "metadata": {
+          "title": "Jeux de Tower Defense - Défendez Votre Base",
+          "description": "Participez à des batailles stratégiques, construisez et améliorez des tours de défense pour repousser des vagues d'ennemis. Protégez votre base avec des tactiques astucieuses et des améliorations puissantes dans ces jeux de tower defense addictifs."
+        },
+        "sortOrder": 0
+      }
+    ],
+    "error": ""
+  },
+  {
+    "type": "GameCategories",
+    "locale": "ko",
+    "content": [
+      {
+        "code": "tower_defense_games",
+        "icon": "gamepad2",
+        "name": "타워 디펜스 게임",
+        "slug": "tower-defense-games",
+        "count": 0,
+        "locale": "ko",
+        "metadata": {
+          "title": "타워 디펜스 게임",
+          "description": "전략적으로 방어 타워를 배치하고 업그레이드하여 몰려오는 적들로부터 기지를 방어하세요."
+        },
+        "sortOrder": 0
+      },
+      {
+        "code": "poké_path_games",
+        "icon": "gamepad",
+        "name": "PokéPath Games",
+        "slug": "pokpath-games",
+        "count": 0,
+        "locale": "en",
+        "metadata": {
+          "title": "PokéPath Games Collection: Play Free Pokémon TD Online",
+          "description": "Play all PokéPath games for free! Enjoy the full collection of Pokémon Tower Defense titles, mods, and strategy challenges directly in your browser.\n"
+        },
+        "sortOrder": 2
+      },
+      {
+        "code": "tower-defense-games",
+        "name": "타워 디펜스 게임",
+        "slug": "tower-defense-games",
+        "count": 0,
+        "locale": "ko",
+        "metadata": {
+          "title": "타워 디펜스 게임 - 기지를 방어하세요",
+          "description": "전략적인 전투에 참여하여 방어 타워를 건설하고 업그레이드하여 적의 파도를 격퇴하세요. 이 중독성 있는 타워 디펜스 게임에서 영리한 전술과 강력한 업그레이드로 기지를 보호하세요."
+        },
+        "sortOrder": 0
+      }
+    ],
+    "error": ""
+  },
+  {
+    "type": "Nav",
+    "locale": "es-ES",
+    "content": [
+      {
+        "id": "home",
+        "href": "/",
+        "label": "Inicio",
+        "target": "_self",
+        "iconName": "home"
+      },
+      {
+        "id": "menu_fKguYnwX",
+        "href": "/games/pokepath-td-v1.4.1",
+        "label": "Nuevo V1.4.1",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_AgoKXJ94",
+        "href": "/games/pokepath-td-v1-3-6",
+        "label": "V1.3.6",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_4teqe6FZ",
+        "href": "/games/pokepath-td-v1-3-3",
+        "label": "V1.3.3",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_n9-iXTVU",
+        "href": "/c/pokpath-games",
+        "label": "Juegos PokéPath",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_bYxgsiyP",
+        "href": "/c/tower-defense-games",
+        "label": "Juegos de Tower Defense",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_61wMbidC",
+        "href": "/blogs",
+        "label": "Guías y Wiki",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "games",
+        "href": "/games",
+        "label": "Todos los Juegos",
+        "target": "_self",
+        "iconName": "gamepad"
+      }
+    ],
+    "error": ""
+  },
+  {
+    "type": "Nav",
+    "locale": "ja",
+    "content": [
+      {
+        "id": "home",
+        "href": "/",
+        "label": "ホーム",
+        "target": "_self",
+        "iconName": "home"
+      },
+      {
+        "id": "menu_fKguYnwX",
+        "href": "/games/pokepath-td-v1.4.1",
+        "label": "新バージョン V1.4.1",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_AgoKXJ94",
+        "href": "/games/pokepath-td-v1-3-6",
+        "label": "V1.3.6",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_4teqe6FZ",
+        "href": "/games/pokepath-td-v1-3-3",
+        "label": "V1.3.3",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_n9-iXTVU",
+        "href": "/c/pokpath-games",
+        "label": "ポケパスタゲーム",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_bYxgsiyP",
+        "href": "/c/tower-defense-games",
+        "label": "タワーディフェンスゲーム",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_61wMbidC",
+        "href": "/blogs",
+        "label": "ガイドとウィキ",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "games",
+        "href": "/games",
+        "label": "すべてのゲーム",
+        "target": "_self",
+        "iconName": "gamepad"
+      }
+    ],
+    "error": ""
+  },
+  {
+    "type": "Nav",
+    "locale": "en",
+    "content": [
+      {
+        "id": "home",
+        "href": "/",
+        "label": "Home",
+        "target": "_self",
+        "iconName": "home"
+      },
+      {
+        "id": "menu_fKguYnwX",
+        "href": "/games/pokepath-td-v1.4.1",
+        "label": "New V1.4.1",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_AgoKXJ94",
+        "href": "/games/pokepath-td-v1-3-6",
+        "label": "V1.3.6",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_4teqe6FZ",
+        "href": "/games/pokepath-td-v1-3-3",
+        "label": "V1.3.3",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_n9-iXTVU",
+        "href": "/c/pokpath-games",
+        "label": "PokéPath Games",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_bYxgsiyP",
+        "href": "/c/tower-defense-games",
+        "label": "Tower Defense Games",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_61wMbidC",
+        "href": "/blogs",
+        "label": "Guides & Wiki",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "games",
+        "href": "/games",
+        "label": "All Games",
+        "target": "_self",
+        "iconName": "gamepad"
+      }
+    ]
+  },
+  {
+    "type": "Nav",
+    "locale": "de",
+    "content": [
+      {
+        "id": "home",
+        "href": "/",
+        "label": "Startseite",
+        "target": "_self",
+        "iconName": "home"
+      },
+      {
+        "id": "menu_fKguYnwX",
+        "href": "/games/pokepath-td-v1.4.1",
+        "label": "Neu V1.4.1",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_AgoKXJ94",
+        "href": "/games/pokepath-td-v1-3-6",
+        "label": "V1.3.6",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_4teqe6FZ",
+        "href": "/games/pokepath-td-v1-3-3",
+        "label": "V1.3.3",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_n9-iXTVU",
+        "href": "/c/pokpath-games",
+        "label": "PokéPath Spiele",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_bYxgsiyP",
+        "href": "/c/tower-defense-games",
+        "label": "Tower Defense Spiele",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_61wMbidC",
+        "href": "/blogs",
+        "label": "Anleitungen & Wiki",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "games",
+        "href": "/games",
+        "label": "Alle Spiele",
+        "target": "_self",
+        "iconName": "gamepad"
+      }
+    ],
+    "error": ""
+  },
+  {
+    "type": "Nav",
+    "locale": "ko",
+    "content": [
+      {
+        "id": "home",
+        "href": "/",
+        "label": "홈",
+        "target": "_self",
+        "iconName": "home"
+      },
+      {
+        "id": "menu_fKguYnwX",
+        "href": "/games/pokepath-td-v1.4.1",
+        "label": "신규 V1.4.1",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_AgoKXJ94",
+        "href": "/games/pokepath-td-v1-3-6",
+        "label": "V1.3.6",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_4teqe6FZ",
+        "href": "/games/pokepath-td-v1-3-3",
+        "label": "V1.3.3",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_n9-iXTVU",
+        "href": "/c/pokpath-games",
+        "label": "포케패스 게임",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_bYxgsiyP",
+        "href": "/c/tower-defense-games",
+        "label": "타워 디펜스 게임",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_61wMbidC",
+        "href": "/blogs",
+        "label": "가이드 & 위키",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "games",
+        "href": "/games",
+        "label": "모든 게임",
+        "target": "_self",
+        "iconName": "gamepad"
+      }
+    ],
+    "error": ""
+  },
+  {
+    "type": "Metadata",
+    "locale": "de",
+    "content": {
+      "title": "PokéPath TD: Spielen Sie Pokémon-Tower-Defense-Spiele online",
+      "description": "Erleben Sie das beste Pokémon-Tower-Defense-Spiel. Entdecken Sie unsere Sammlung von PokéPath-Spielen, Top-TD-Strategiespielen und erhalten Sie Zugang zu exklusiven Guides und Anleitungen."
+    }
+  },
+  {
+    "type": "Metadata",
+    "locale": "fr",
+    "content": {
+      "title": "PokéPath TD : Jouez aux jeux Pokémon Tower Defense en ligne",
+      "description": "Découvrez le meilleur jeu de Pokémon Tower Defense. Explorez notre collection de jeux PokéPath, les meilleurs jeux de stratégie TD, et accédez à des guides exclusifs et des walkthroughs."
+    }
+  },
+  {
+    "type": "Metadata",
+    "locale": "ja",
+    "content": {
+      "title": "ポケパスTD：オンラインでポケモンタワーディフェンスゲームをプレイ",
+      "description": "最高のポケモンタワーディフェンスゲームを体験。ポケパスゲームのコレクション、評価の高いTDストラテジーゲーム、そしてエクスクルーシブガイドやウォークスルーにアクセス。"
+    }
+  },
+  {
+    "type": "Metadata",
+    "locale": "es-ES",
+    "content": {
+      "title": "PokéPath TD: Juega juegos de Pokémon Tower Defense en línea",
+      "description": "Experimenta el mejor juego de Pokémon Tower Defense. Explora nuestra colección de juegos PokéPath, los mejores juegos de estrategia TD y accede a guías y recorridos exclusivos."
+    }
+  },
+  {
+    "type": "Metadata",
+    "locale": "ko",
+    "content": {
+      "title": "포케패스 TD: 온라인 포켓몬 타워 디펜스 게임 즐기기",
+      "description": "최고의 포켓몬 타워 디펜스 게임을 체험하세요. 포케패스 게임 컬렉션, 최고 평점의 TD 전략 게임을 탐색하고, 독점 가이드와 공략을 확인해보세요."
+    }
+  },
+  {
+    "type": "Nav",
+    "locale": "fr",
+    "content": [
+      {
+        "id": "home",
+        "href": "/",
+        "label": "Accueil",
+        "target": "_self",
+        "iconName": "home"
+      },
+      {
+        "id": "menu_fKguYnwX",
+        "href": "/games/pokepath-td-v1.4.1",
+        "label": "Nouveau V1.4.1",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_AgoKXJ94",
+        "href": "/games/pokepath-td-v1-3-6",
+        "label": "V1.3.6",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_4teqe6FZ",
+        "href": "/games/pokepath-td-v1-3-3",
+        "label": "V1.3.3",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_n9-iXTVU",
+        "href": "/c/pokpath-games",
+        "label": "Jeux PokéPath",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_bYxgsiyP",
+        "href": "/c/tower-defense-games",
+        "label": "Jeux de Tower Defense",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "menu_61wMbidC",
+        "href": "/blogs",
+        "label": "Guides et Wiki",
+        "target": "_self",
+        "children": [],
+        "iconName": ""
+      },
+      {
+        "id": "games",
+        "href": "/games",
+        "label": "Tous les jeux",
+        "target": "_self",
+        "iconName": "gamepad"
+      }
+    ],
+    "error": ""
+  },
+  {
+    "type": "GameCategories",
+    "locale": "de",
+    "content": [
+      {
+        "code": "tower_defense_games",
+        "icon": "gamepad2",
+        "name": "Tower Defense Spiele",
+        "slug": "tower-defense-games",
+        "count": 0,
+        "locale": "de",
+        "metadata": {
+          "title": "Tower Defense Spiele",
+          "description": "Verteidige deine Basis gegen Wellen von Feinden, indem du strategisch Verteidigungstürme platzierst und verbesserst."
+        },
+        "sortOrder": 0
+      },
+      {
+        "code": "poké_path_games",
+        "icon": "gamepad",
+        "name": "PokéPath Games",
+        "slug": "pokpath-games",
+        "count": 0,
+        "locale": "en",
+        "metadata": {
+          "title": "PokéPath Games Collection: Play Free Pokémon TD Online",
+          "description": "Play all PokéPath games for free! Enjoy the full collection of Pokémon Tower Defense titles, mods, and strategy challenges directly in your browser.\n"
+        },
+        "sortOrder": 2
+      },
+      {
+        "code": "tower-defense-games",
+        "name": "Tower Defense Spiele",
+        "slug": "tower-defense-games",
+        "count": 0,
+        "locale": "de",
+        "metadata": {
+          "title": "Tower Defense Spiele - Verteidige deine Basis",
+          "description": "Nimm an strategischen Schlachten teil, baue und verbessere Verteidigungstürme, um Wellen von Feinden abzuwehren. Schütze deine Basis mit cleveren Taktiken und mächtigen Upgrades in diesen süchtig machenden Tower Defense Spielen."
+        },
+        "sortOrder": 0
+      }
+    ],
+    "error": ""
+  },
+  {
+    "type": "GameCategories",
+    "locale": "es-ES",
+    "content": [
+      {
+        "code": "tower_defense_games",
+        "icon": "gamepad2",
+        "name": "Juegos de Defensa de la Torre",
+        "slug": "tower-defense-games",
+        "count": 0,
+        "locale": "es-ES",
+        "metadata": {
+          "title": "Juegos de Defensa de la Torre",
+          "description": "Defiende tu base de oleadas de enemigos colocando y mejorando estratégicamente torres defensivas."
+        },
+        "sortOrder": 0
+      },
+      {
+        "code": "poké_path_games",
+        "icon": "gamepad",
+        "name": "PokéPath Games",
+        "slug": "pokpath-games",
+        "count": 0,
+        "locale": "en",
+        "metadata": {
+          "title": "PokéPath Games Collection: Play Free Pokémon TD Online",
+          "description": "Play all PokéPath games for free! Enjoy the full collection of Pokémon Tower Defense titles, mods, and strategy challenges directly in your browser.\n"
+        },
+        "sortOrder": 2
+      },
+      {
+        "code": "tower-defense-games",
+        "name": "Juegos de Defensa de Torres",
+        "slug": "tower-defense-games",
+        "count": 0,
+        "locale": "es-ES",
+        "metadata": {
+          "title": "Juegos de Defensa de Torres - Defiende tu Base",
+          "description": "Participa en batallas estratégicas, construyendo y mejorando torres defensivas para repeler oleadas de enemigos. Protege tu base con tácticas inteligentes y mejoras poderosas en estos adictivos juegos de defensa de torres."
+        },
+        "sortOrder": 0
+      }
+    ],
+    "error": ""
+  }
+]

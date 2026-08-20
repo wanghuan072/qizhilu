@@ -1,0 +1,134 @@
+/* MarkdownRenderer 暗黑模式样式 */
+
+/* 确保在所有主题下的一致性 */
+.markdown-container {
+	/* 基础文本颜色 */
+	color: hsl(var(--foreground));
+}
+
+/* 代码块样式增强 */
+.markdown-container pre {
+	background-color: hsl(var(--muted));
+	border: 1px solid hsl(var(--border));
+	color: hsl(var(--foreground));
+}
+
+.markdown-container code {
+	background-color: hsl(var(--muted));
+	color: hsl(var(--foreground));
+	border: 1px solid hsl(var(--border));
+}
+
+/* 引用块样式 */
+.markdown-container blockquote {
+	border-left-color: hsl(var(--primary));
+	background-color: hsl(var(--muted) / 0.5);
+	color: hsl(var(--muted-foreground));
+}
+
+/* 表格样式 */
+.markdown-container table {
+	border-color: hsl(var(--border));
+}
+
+.markdown-container th {
+	background-color: hsl(var(--muted));
+	border-color: hsl(var(--border));
+	color: hsl(var(--foreground));
+}
+
+.markdown-container td {
+	border-color: hsl(var(--border));
+	color: hsl(var(--foreground));
+}
+
+/* 链接样式 */
+.markdown-container a {
+	color: hsl(var(--primary));
+	transition: color 0.2s ease;
+}
+
+.markdown-container a:hover {
+	color: hsl(var(--primary) / 0.8);
+}
+
+/* 分隔线样式 */
+.markdown-container hr {
+	border-color: hsl(var(--border));
+}
+
+/* 图片样式 */
+.markdown-container img {
+	border: 1px solid hsl(var(--border));
+	border-radius: 0.5rem;
+}
+
+/* 列表样式 */
+.markdown-container ul,
+.markdown-container ol {
+	color: hsl(var(--foreground));
+}
+
+.markdown-container li {
+	color: hsl(var(--foreground));
+}
+
+/* 标题样式 */
+.markdown-container h1,
+.markdown-container h2,
+.markdown-container h3,
+.markdown-container h4,
+.markdown-container h5,
+.markdown-container h6 {
+	color: hsl(var(--foreground));
+}
+
+.markdown-container h2 {
+	color: hsl(var(--primary));
+}
+
+/* FAQ 变体特殊样式 */
+.markdown-container.faq h3 {
+	color: hsl(var(--primary));
+}
+
+/* 强调和斜体 */
+.markdown-container strong {
+	color: hsl(var(--foreground));
+}
+
+.markdown-container em {
+	color: hsl(var(--foreground));
+}
+
+/* 确保在暗黑模式下的对比度 */
+.dark .markdown-container {
+	/* 在暗黑模式下可能需要的额外调整 */
+}
+
+/* 代码语法高亮支持 */
+.markdown-container pre code {
+	background: transparent;
+	border: none;
+	padding: 0;
+}
+
+/* 内联代码样式 */
+.markdown-container p code,
+.markdown-container li code {
+	font-size: 0.875rem;
+	padding: 0.125rem 0.25rem;
+	border-radius: 0.25rem;
+}
+
+/* 响应式表格 */
+@media (max-width: 768px) {
+	.markdown-container table {
+		font-size: 0.875rem;
+	}
+
+	.markdown-container th,
+	.markdown-container td {
+		padding: 0.5rem;
+	}
+}

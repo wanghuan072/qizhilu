@@ -1,0 +1,5 @@
+{
+  "buildCommand": "bun run fetch-site-settings && bun run build",
+  "outputDirectory": "out",
+  "installCommand": "bun install"
+}
