@@ -34,6 +34,11 @@ const ADS_TXT_PATH = path.resolve(process.cwd(), 'public/ads.txt');
 const FAVICON_PATH = path.resolve(process.cwd(), 'public/favicon.ico');
 const APPLE_TOUCH_ICON_PATH = path.resolve(process.cwd(), 'public/apple-touch-icon.png');
 
+// 该仓库已经更换所有者。远端项目仍可作为内容源，但其中的账户级配置
+// （广告、统计、追踪和联系方式）默认不再受信任，避免旧所有者的数据在构建时被重新写回。
+const DEFAULT_OWNED_DOMAIN = 'https://qizhilu.vercel.app';
+const LEGACY_DOMAINS = new Set(['pokepathtd.com', 'www.pokepathtd.com']);
+
 // 脚本配置
 const SCRIPT_CONFIG = {
   // 单个请求超时时间（毫秒）
@@ -120,6 +125,8 @@ function generateAdsTxtFile(adsTxtContent: string) {
       } else {
         console.log('ads.txt 内容为空，跳过生成');
       }
+
+      return;
     }
 
     // 确保 public 目录存在
@@ -137,6 +144,77 @@ function generateAdsTxtFile(adsTxtContent: string) {
     console.error('生成 ads.txt 文件时出错:', error);
     // 不抛出错误，让主流程继续执行
   }
+}
+
+function normalizeDomain(domain: string): string {
+  const trimmedDomain = domain.trim().replace(/\/$/, '');
+  if (!trimmedDomain) {
+    return DEFAULT_OWNED_DOMAIN;
+  }
+
+  const domainWithProtocol = /^https?:\/\//i.test(trimmedDomain)
+    ? trimmedDomain
+    : `https://${trimmedDomain}`;
+
+  try {
+    const hostname = new URL(domainWithProtocol).hostname.toLowerCase();
+    return LEGACY_DOMAINS.has(hostname) ? DEFAULT_OWNED_DOMAIN : domainWithProtocol;
+  } catch {
+    console.warn(`NEXT_PUBLIC_DOMAIN 无效，使用默认域名: ${DEFAULT_OWNED_DOMAIN}`);
+    return DEFAULT_OWNED_DOMAIN;
+  }
+}
+
+/**
+ * 隔离旧项目中的账户级配置。
+ * 以后只有在远端项目已经换成当前所有者自己的账户后，才可显式设置
+ * TRUST_REMOTE_SITE_INTEGRATIONS=true 重新启用。
+ */
+function prepareOwnedSiteSettings(remoteSettings: SiteSettings): SiteSettings {
+  const configuredDomain = process.env.NEXT_PUBLIC_DOMAIN || DEFAULT_OWNED_DOMAIN;
+  const domain = normalizeDomain(configuredDomain);
+  const trustRemoteIntegrations = process.env.TRUST_REMOTE_SITE_INTEGRATIONS === 'true';
+
+  if (trustRemoteIntegrations) {
+    console.log('已显式信任远端账户级配置');
+    return {
+      ...remoteSettings,
+      domain,
+    };
+  }
+
+  console.log('已隔离远端账户级配置：广告、统计、追踪、联系方式和外部链接均已停用');
+  return {
+    ...remoteSettings,
+    domain,
+    contactEmail: undefined,
+    socialLinks: {},
+    analytics: {},
+    customHeaderContent: '',
+    adsTxtContent: '',
+    friendLinks: [],
+    adsSettings: [],
+  };
+}
+
+function replaceLegacyDomainReferences<T>(value: T): T {
+  if (typeof value === 'string') {
+    return value
+      .replace(/https?:\/\/(?:www\.)?pokepathtd\.com/gi, DEFAULT_OWNED_DOMAIN)
+      .replace(/(?:www\.)?pokepathtd\.com/gi, 'qizhilu.vercel.app') as T;
+  }
+
+  if (Array.isArray(value)) {
+    return value.map(item => replaceLegacyDomainReferences(item)) as T;
+  }
+
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(
+      Object.entries(value).map(([key, item]) => [key, replaceLegacyDomainReferences(item)])
+    ) as T;
+  }
+
+  return value;
 }
 
 /**
@@ -525,7 +603,7 @@ async function fetchAndSaveAllData() {
 
     // 并行获取基础数据
     console.log('获取基础数据...');
-    const [siteSettings, articleList, games, gameTags, localeSiteSettings, customPages] = await Promise.all([
+    const [remoteSiteSettings, remoteArticleList, remoteGames, gameTags, remoteLocaleSiteSettings, remoteCustomPages] = await Promise.all([
       fetchFromApi<SiteSettings>("/site-settings", { projectId, skipCache: true }, API_FETCH_OPTIONS),
       fetchFromApi<ArticlePost[]>("/articles", { projectId, skipCache: true }, API_FETCH_OPTIONS),
       fetchFromApi<GameDataList>("/games", { projectId, skipCache: true }, API_FETCH_OPTIONS),
@@ -539,6 +617,14 @@ async function fetchAndSaveAllData() {
         return []
       })
     ]);
+
+    const siteSettings = remoteSiteSettings
+      ? prepareOwnedSiteSettings(replaceLegacyDomainReferences(remoteSiteSettings))
+      : remoteSiteSettings;
+    const articleList = replaceLegacyDomainReferences(remoteArticleList);
+    const games = replaceLegacyDomainReferences(remoteGames);
+    const localeSiteSettings = replaceLegacyDomainReferences(remoteLocaleSiteSettings);
+    const customPages = replaceLegacyDomainReferences(remoteCustomPages);
 
     console.log('基础数据获取完成');
 

@@ -6,10 +6,10 @@ import { parseCustomHeaderContent } from "@/lib/metadataUtils"
 import { cn } from "@/lib/utils/react"
 import { generateLayoutMetadata } from "@/lib/utils/seo/metadata-generators"
 import { Metadata, Viewport } from "next"
-import Script from "next/script"
 import { NextIntlClientProvider } from "next-intl"
 import { setRequestLocale } from "next-intl/server"
 import { notFound } from "next/navigation"
+import Script from "next/script"
 import type { PropsWithChildren } from "react"
 import "../globals.css"
 import "./current-theme.css"
@@ -68,31 +68,17 @@ export default async function LocaleLayout({ children, params }: Props) {
 			<head>
 				{/* 注入那些不能通过 metadata API 处理的脚本和其他标签 */}
 				<RawScriptInjector scripts={rawScripts} />
-				
-				{/* 全局 Google AdSense 自动广告 */}
+
+				{/* 全局 Google AdSense。加载脚本即可启用账户中配置的自动广告。 */}
 				{siteSettings.analytics?.adsenseClientId && (
-					<>
-						<Script
-							async
-							src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${siteSettings.analytics.adsenseClientId}`}
-							crossOrigin="anonymous"
-							strategy="afterInteractive"
-						/>
-						<Script
-							id="adsense-auto-ads"
-							strategy="afterInteractive"
-							dangerouslySetInnerHTML={{
-								__html: `
-									(adsbygoogle = window.adsbygoogle || []).push({
-										google_ad_client: "${siteSettings.analytics.adsenseClientId}",
-										enable_page_level_ads: true
-									});
-								`,
-							}}
-						/>
-					</>
+					<Script
+						async
+						src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${siteSettings.analytics.adsenseClientId}`}
+						crossOrigin="anonymous"
+						strategy="afterInteractive"
+					/>
 				)}
-				
+
 				{/* 全局弹窗广告初始化脚本（如果需要） */}
 				{/* 注意：弹窗广告的具体代码应该在 ModalAdSlot 组件中，这里只是初始化 */}
 			</head>

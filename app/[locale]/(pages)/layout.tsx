@@ -1,18 +1,14 @@
-import {
-	GoogleAnalytics,
-	MicrosoftClarity,
-	TikTokPixel,
-} from "@/lib/components/analytics"
+import { GoogleAnalytics, MicrosoftClarity } from "@/lib/components/analytics"
 import { GameBoxLayout } from "@/lib/components/layout/GameBoxLayout"
 import { DynamicFooter } from "@/lib/components/ui/view/DynamicFooter"
 import { DynamicHeader } from "@/lib/components/ui/view/DynamicHeader"
 import { isSupportedLocale } from "@/lib/i18n/locales"
 import { SiteService } from "@/lib/services"
 import { getAllGamesPageData } from "@/lib/services/game"
-import type { PropsWithChildren } from "react"
 import { setRequestLocale } from "next-intl/server"
 import { notFound } from "next/navigation"
 import Script from "next/script"
+import type { PropsWithChildren } from "react"
 
 type Props = PropsWithChildren<{ params: Promise<{ locale: string }> }>
 
@@ -111,15 +107,6 @@ export default async function PagesLayout({ children, params }: Props) {
 					)}
 					{analytics.clarityId && (
 						<MicrosoftClarity clarityId={analytics.clarityId} />
-					)}
-					{/* TikTok Pixel - 自动追踪页面访问和页面停留时长 */}
-					<TikTokPixel autoTrack={true} trackEngagement={true} />
-					{analytics.adsenseClientId && (
-						<Script
-							async
-							src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${analytics.adsenseClientId}`}
-							crossOrigin="anonymous"
-						/>
 					)}
 				</>
 			)}
